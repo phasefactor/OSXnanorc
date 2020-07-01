@@ -25,30 +25,31 @@ color brightcyan "^[ \t]*set (backupdir|brackets|fill|matchbrackets|operatingdir
 color brightcyan "^[ \t]*set (punctquotestr|speller|tabsize|whitespace)[ \t]+.+"
 
 # color and icolor
+# note-docs say background colors cannot be "bright" and no space between 
+# fgcolor and bgcolor, only a comma...
 # will trigger on some wonky construction but will alert for most errors
-color brightcyan "^[ \t]*(color|icolor) (bright)?(white|black|red|blue|green|yellow|magenta|cyan)(,[ \t]*(white|black|red|blue|green|yellow|magenta|cyan))?[ \t]+".+""
-color brightcyan "^[ \t]*(color|icolor) (bright)?(white|black|red|blue|green|yellow|magenta|cyan)(,[ \t]*(white|black|red|blue|green|yellow|magenta|cyan))?[ \t]+start=".*"[ \t]+end=".+""
-#special rule to catch color statements with only background colors...
-#docs say background colors cannot be "bright"
+color brightcyan "^[ \t]*(color|icolor) (bright)?(white|black|red|blue|green|yellow|magenta|cyan)(,(white|black|red|blue|green|yellow|magenta|cyan))?[ \t]+".+""
+color brightcyan "^[ \t]*(color|icolor) (bright)?(white|black|red|blue|green|yellow|magenta|cyan)(,(white|black|red|blue|green|yellow|magenta|cyan))?[ \t]+start=".*"[ \t]+end=".+""
+# special rule to catch color statements with only background color set
 color brightcyan "^[ \t]*(color|icolor) ,(white|black|red|blue|green|yellow|magenta|cyan))?[ \t]+".*""
 
 # preview colors
-color white "[ \t]+white[ \t]+"
-color brightwhite "[ \t]+brightwhite[ \t]+"
-color black "[ \t]+black[ \t]+"
-color brightblack "[ \t]+brightblack[ \t]+"
-color red "[ \t]+red[ \t]+"
-color brightred "[ \t]+brightred[ \t]+"
-color green "[ \t]+green[ \t]+"
-color brightgreen "[ \t]+brightgreen[ \t]+"
-color blue "[ \t]+blue[ \t]+"
-color brightblue "[ \t]+brightblue[ \t]+"
-color yellow "[ \t]+yellow[ \t]+"
-color brightyellow "[ \t]+brightyellow[ \t]+"
-color magenta "[ \t]+magenta[ \t]+"
-color brightmagenta "[ \t]+brightmagenta[ \t]+"
-color cyan "[ \t]+cyan[ \t]+"
-color brightcyan "[ \t]+brightcyan[ \t]+"
+color white "[ \t,]+white[ \t,]+"
+color brightwhite "[ \t]+brightwhite[ \t,]+"
+color black "[ \t]+black[ \t,]+"
+color brightblack "[ \t,]+brightblack[ \t,]+"
+color red "[ \t,]+red[ \t,]+"
+color brightred "[ \t,]+brightred[ \t,]+"
+color green "[ \t,]+green[ \t,]+"
+color brightgreen "[ \t,]+brightgreen[ \t,]+"
+color blue "[ \t,]+blue[ \t,]+"
+color brightblue "[ \t,]+brightblue[ \t,]+"
+color yellow "[ \t,]+yellow[ \t,]+"
+color brightyellow "[ \t,]+brightyellow[ \t,]+"
+color magenta "[ \t,]+magenta[ \t,]+"
+color brightmagenta "[ \t,]+brightmagenta[ \t,]+"
+color cyan "[ \t,]+cyan[ \t,]+"
+color brightcyan "[ \t,]+brightcyan[ \t,]+"
 
 # comments
 color green "^#.*$"
