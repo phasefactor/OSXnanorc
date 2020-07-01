@@ -3,7 +3,7 @@ Optional files for the OS X distro of nano (v2.0.6 at the time I made these) to 
 
 The ancient version of nano that is distributed with OS X currently does not support modern regex things like lookaround, so most available syntax highlighting files fail miserably unless you update. 
 
-It looks like it only understands POSIX Basic RegEx so I have tried to do what I can with the POSIX BRE ruleset.
+It looks like v2.0.6 only understands POSIX Basic RegEx so I have tried to do what I can with the POSIX BRE ruleset.
 
 To use:
 - grab the files, 
