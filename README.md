@@ -1,4 +1,4 @@
-# nanorc files
+# OS X nanorc files
 Optional files for the OS X distro of nano (v2.0.6 at the time I made these) to make it a functional development tool.
 
 To use:
