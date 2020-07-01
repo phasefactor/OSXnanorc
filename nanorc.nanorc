@@ -1,0 +1,54 @@
+##
+## syntax highlighting for nanorc files 
+## works on nano 2.0.6 (the version distributed with OS X)
+##
+##
+## the hard coded space in the regexs should probably all be changed to [ \t]+
+syntax "nanorc" ".*\.nanorc$"
+
+# implementing a weak error detection mechanism
+color brightred ".*"
+
+# syntax line
+color brightwhite "^[ \t]*syntax .*"
+
+# include
+color brightmagenta "^[ \t]*include[ \t]+.*"
+
+# setting names/syntax taken from the v2.0 docs on nano-editor.org
+color brightcyan "^[ \t]*(un)?set "
+color brightcyan "^[ \t]*(un)?set (autoindent|backup|backwards|boldtext|casesensitive)"
+color brightcyan "^[ \t]*(un)?set (const|cut|historylog|morespace|mouse|multibuffer|noconvert)"
+color brightcyan "^[ \t]*(un)?set (no(follow|help|wrap)|preserve|quickblank|rebind(delete|keypad))"
+color brightcyan "^[ \t]*(un)?set (regexp|smarthome|smooth|suspend|tabstospaces|tempfile|view|wordbounds)"
+color brightcyan "^[ \t]*set (backupdir|brackets|fill|matchbrackets|operatingdir)[ \t]+.+"
+color brightcyan "^[ \t]*set (punctquotestr|speller|tabsize|whitespace)[ \t]+.+"
+
+# color and icolor
+# will trigger on some wonky construction but will alert for most errors
+color brightcyan "^[ \t]*(color|icolor) (bright)?(white|black|red|blue|green|yellow|magenta|cyan)(,[ \t]*(white|black|red|blue|green|yellow|magenta|cyan))?[ \t]+".+""
+color brightcyan "^[ \t]*(color|icolor) (bright)?(white|black|red|blue|green|yellow|magenta|cyan)(,[ \t]*(white|black|red|blue|green|yellow|magenta|cyan))?[ \t]+start=".*"[ \t]+end=".+""
+#special rule to catch color statements with only background colors...
+#docs say background colors cannot be "bright"
+color brightcyan "^[ \t]*(color|icolor) ,(white|black|red|blue|green|yellow|magenta|cyan))?[ \t]+".*""
+
+# preview colors
+color white "[ \t]+white[ \t]+"
+color brightwhite "[ \t]+brightwhite[ \t]+"
+color black "[ \t]+black[ \t]+"
+color brightblack "[ \t]+brightblack[ \t]+"
+color red "[ \t]+red[ \t]+"
+color brightred "[ \t]+brightred[ \t]+"
+color green "[ \t]+green[ \t]+"
+color brightgreen "[ \t]+brightgreen[ \t]+"
+color blue "[ \t]+blue[ \t]+"
+color brightblue "[ \t]+brightblue[ \t]+"
+color yellow "[ \t]+yellow[ \t]+"
+color brightyellow "[ \t]+brightyellow[ \t]+"
+color magenta "[ \t]+magenta[ \t]+"
+color brightmagenta "[ \t]+brightmagenta[ \t]+"
+color cyan "[ \t]+cyan[ \t]+"
+color brightcyan "[ \t]+brightcyan[ \t]+"
+
+# comments
+color green "^#.*$"
