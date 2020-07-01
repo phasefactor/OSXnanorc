@@ -10,7 +10,7 @@ To use:
 - put the (language name).nanorc files into a directory of your choice, 
 - drop the nanorc file into your home directory (~) and rename it to .nanorc
 
-If you did not use ~/nano/ for the language specific .nanorc files then main nanorc file will need to be updated with the correct path.
+If you did not use ~/nano/ for the language specific .nanorc files then the main nanorc file will need to be updated with the correct path.
 
 The path for the backup files directory should be changed to suit your preference also.
 
