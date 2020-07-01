@@ -1,0 +1,26 @@
+##
+## config for development on nano 2.0.6 (the version distributed with OS X)
+##
+
+# enable mouse click
+# NOTE: highlighting does not work as a GUI user would expect
+set mouse
+
+# turn on automatic indent when you hit enter
+set autoindent
+
+# smooth scroll
+set smooth
+
+# turn on backups and provide a path where backups should be stored
+set backup
+set backupdir "~/nano_backups/"
+
+# set tab size and convert tabs to spaces
+set tabsize 2
+set tabstospaces
+
+# include other nanorc files for syntax highlighting
+include ~/nano/c.nanorc
+include ~/nano/nanorc.nanorc
+
