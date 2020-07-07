@@ -1,0 +1,42 @@
+##
+## syntax highlighting for AWK files
+## works for nano 2.0.6 (the version distributed with OS X)
+##
+
+syntax "awk" ".*awk$"
+
+# turn of tabstospaces
+# unset tabstospaces
+
+# variable and array names
+color brightcyan "[a-zA-Z][a-zA-Z0-9]*"
+
+# really hacky way to get "in" for array enumeration
+color brightmagenta "\([a-zA-Z][a-zA-Z0-9]*[ \t]+in "
+color brightcyan "\([a-zA-Z][a-zA-Z0-9]*[ \t]"
+
+
+# function names
+color brightred "(function )?[a-zA-Z_][a-zA-Z0-9_]*\("
+
+# numeric constants
+color brightwhite "[^a-zA-Z][0-9]+[^a-zA-Z]"
+
+# BEGIN and END
+color brightred "^[ \t]*(BEGIN|END)"
+
+# flow control
+color brightmagenta "[^a-zA-Z0-9]?(for|if|while|do|else|continue|break|next|exit)[^a-zA-Z0-9]"
+
+# touch up punctuation colors
+color white "(\[|\]|\<|\>|\=|\;|\*|\.|\!|\+|\&)"
+color brightwhite "(\$|\(|\)|\{|\}|\,)"
+
+# built-in variables
+color brightmagenta "[^a-zA-Z0-9](ARGC|ARGV|FILENAME|FNR|FS|NF|NR|OFMT|OFS|ORS|RLENGTH|RS[TART]?|SUBSEP)[^a-zA-Z0-9]"
+
+# strings
+color brightyellow ""((\\")|[^"])*""
+
+# comments
+color green "#.*"

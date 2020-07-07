@@ -6,27 +6,30 @@ syntax "c" "\.[ch]$"
 # super wasteful but we have a terrible regex engine...
 color brightcyan "[a-zA-Z_][a-zA-Z0-9_]*"
 
+# constant names
+color brightblue "(([A-Z_][A-Z0-9_]+)|([^a-zA-Z0-9][A-Z][^a-zA-Z0-9]))"
+
 # function calls
-color brightred "[a-zA-Z_][a-zA-Z0-9_]*\(.*\)"
+color brightred "[a-zA-Z_][a-zA-Z0-9_]*\("
 
 # fix function argument colors
-color brightcyan "\(.+\)"
-
-# constant names
-color brightblue "[A-Z_][A-Z0-9_]+"
+# color brightcyan "\(.+\)"
 
 # numeric constants
 color brightwhite "[^a-zA-Z][0-9]+"
+
+# true false
+color brightwhite "[^a-zA-Z0-9](true|false)[^a-zA-Z0-9]"
 
 # union and struct name
 color green "(union |struct )([a-zA-Z_][a-zA-Z0-9_]*)"
 
 # type defs
-color brightblue "(char|int|float|double|bool|short|long|void|(un| )signed|struct|union)[ )]"
+color brightblue "(char|int|float|double|bool|short|long|void|(un| )signed|struct|union)[ )\*]"
 # color brightcyan "int"
 
 # flow control
-color brightmagenta "^[ \t\{]*(for|if|return|while|do|switch)"
+color brightmagenta "^[ \t\{]*(for|if|return|while|do|switch|continue|break)"
 
 # preprocessor
 color magenta "^[ \t\n\r\f\v]*#(define|include|(un|if|ifn?)def|if|el(if|se)|endif|error)"
@@ -38,9 +41,9 @@ color white "(\(|\)|\[|\]|\,|\<|\>|\=|\;|\*|\.|\!)"
 color brightyellow ""((\\")|[^"])*""
 
 # single quote character values 
-color brightyellow "'.'"   
+color brightyellow "'(\\\.|.)'"   
 # flag long strings in single quotes as an error
-color brightwhite,red "'.+'"
+#color brightwhite,red "'.+'"
 
 # header file name strings
 color brightyellow "<[^=].*>"
