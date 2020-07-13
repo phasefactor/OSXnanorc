@@ -9,7 +9,7 @@ color brightcyan ".*"
 
 # really hacky way to catch "in" for (single- and multi-dimensional) array enumeration
 # could probably be two rules instead of three
-color brightmagenta "\([ \t]*[a-zA-Z][a-zA-Z0-9]*[ \t]+in[ \t]"
+color brightmagenta "\([ \t]*([a-zA-Z]|(\$))[a-zA-Z0-9]*[ \t]+in[ \t]"
 color brightmagenta "\,[ \t]*[a-zA-Z][a-zA-Z0-9]*[ \t]*\)[ \t]*in[ \t]"
 color brightcyan "\([a-zA-Z][a-zA-Z0-9]*([ \t]*,[ \t]*[a-zA-Z][a-zA-Z0-9]*[ \t]*\))?[ \t]"
 
@@ -39,9 +39,8 @@ color brightwhite "(\$|\(|\)|\{|\}|\,)"
 #           eg. gsub(/"/, "", $2)
  color brightyellow ""((\\")|[^"])*""
 
-# regex - most start on newlines so adding that discriminator
-#         will cause it to miss regex as function arguments etc
-color brightgreen "^[ \t]*/.*/"
+# regex 
+color brightgreen "/[^/]*/"
 
 # comments - really gnarly to not capture # in strings or regex
 #            looks for no " or / in the comment or matched pairs
