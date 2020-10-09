@@ -11,7 +11,7 @@ color brightcyan ".*"
 # could probably be two rules instead of three
 color brightmagenta "\([ \t]*([a-zA-Z]|(\$))[a-zA-Z0-9]*[ \t]+in[ \t]"
 color brightmagenta "\,[ \t]*[a-zA-Z][a-zA-Z0-9]*[ \t]*\)[ \t]*in[ \t]"
-color brightcyan "\([a-zA-Z][a-zA-Z0-9]*([ \t]*,[ \t]*[a-zA-Z][a-zA-Z0-9]*[ \t]*\))?[ \t]"
+color brightcyan "\([ \t]*[a-zA-Z][a-zA-Z0-9]*([ \t]*,[ \t]*[a-zA-Z][a-zA-Z0-9]*[ \t]*\))?[ \t]"
 
 # function names
 color brightred "(function )?[a-zA-Z_][a-zA-Z0-9_]*\("
@@ -20,13 +20,13 @@ color brightred "(function )?[a-zA-Z_][a-zA-Z0-9_]*\("
 color brightred "(^[ \t]|[ \t\(\t])*(print(f)?|getline)[ <\t]"
 
 # numeric constants (without catching numbers in variable names etc
-color brightwhite "[^a-zA-Z][0-9]+[^a-zA-Z]"
+color brightwhite "[^a-zA-Z][0-9]+([^a-zA-Z]|(()$))"
 
 # BEGIN and END
 color brightred "^[ \t]*(BEGIN|END)"
 
 # flow control - really weird construct to catch beginning and end of line
-color brightmagenta "([^a-zA-Z0-9]|(^()))(for|if|while|do|else|continue|break|next|exit|return|delete)([^a-zA-Z0-9]|(()$))"
+color brightmagenta "([^a-zA-Z0-9]|(^()))(for|if|while|do|else|continue|break|next|exit|return|delete)([^a-zA-Z0-9_]|(()$))"
 
 # built-in variables
 color brightmagenta "([^a-zA-Z0-9]|(^()))(ARGC|ARGV|FILENAME|FNR|FS|NF|NR|OFMT|OFS|ORS|RLENGTH|RS(TART)?|SUBSEP)([^a-zA-Z0-9]|(()$))"
@@ -39,8 +39,9 @@ color brightwhite "(\$|\(|\)|\{|\}|\,)"
 #           eg. gsub(/"/, "", $2)
  color brightyellow ""((\\")|[^"])*""
 
-# regex 
-color brightgreen "/[^/]*/"
+# regex - matching only patterns for pattern action pairs
+#         matching all regex has too many false positives
+color brightgreen "^[ /t]*/[^/]*/"
 
 # comments - really gnarly to not capture # in strings or regex
 #            looks for no " or / in the comment or matched pairs

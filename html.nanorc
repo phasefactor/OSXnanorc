@@ -1,0 +1,20 @@
+## HTML syntax highlighting for nano v2.0.6
+##
+syntax "html" "\.html$"
+
+color cyan start="<" end=">"
+
+#element names
+color brightcyan "\<(\/)?(html|head|body|meta|title|link|script|header|nav|main|footer|div|span|p|ul|li|img|a|h[1-6]|table|tr|td|th|thead|input)[ >]"
+
+#important attributes
+#color green "[ ]+(id|class|src|href)=""
+
+#punctuation (before strings)
+color brightmagenta "(\<(\/)?|(\/)?\>)"
+
+# strings
+color brightyellow "="[^"]*""
+
+# touch up punctuation colors
+color brightwhite "((=)?")"
