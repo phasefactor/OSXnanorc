@@ -1,19 +1,8 @@
-# OS X nanorc files
-Optional files for the OS X distro of nano (v2.0.6 at the time I made these) to make it a functional development tool.
+# `nanorc` files for macOS
+As of macOS 13, `nano` (v2.0.6 last time I checked) has been replaced with `pico` (v5.09).
 
-The ancient version of nano that is distributed with OS X currently does not support modern regex things like lookaround, so most available syntax highlighting files fail miserably unless you make your own. 
+`pico` does not do syntax highlighting, so it is not useful for me.
 
-It looks like v2.0.6 only understands POSIX Basic Reg Ex so I have tried to do what I can with the POSIX BRE ruleset.
- 
-To use:
-- grab the files, 
-- put the (language name).nanorc files into a directory of your choice, 
-- drop the nanorc file into your home directory (~) and rename it to .nanorc
+You can compile/install GNU `nano` pretty easily.  (I [posted instructions on my site](https://phasefactor.dev).)
 
-If you did not use ~/nano/ for the language specific .nanorc files then the main nanorc file will need to be updated with the correct path.
-
-The path for the backup files directory should be changed to suit your preference also.
-
-
-
-I will add more files as I work in those languages.  HTML, CSS, and JS will be the next likely candidates.
+These files are not useful for modern `nano`, and you should just use the syntax highlighting examples provided in the GNU distro...
