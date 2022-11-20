@@ -1,5 +1,5 @@
 # `nanorc` files for macOS
-As of macOS 13, `nano` (v2.0.6 last time I checked) has been replaced with `pico` (v5.09).
+As of macOS 12.3, `nano` (v2.0.6 last time I checked) has been replaced with `pico` (v5.09).
 
 `pico` does not do syntax highlighting, so it is not useful for me.
 
